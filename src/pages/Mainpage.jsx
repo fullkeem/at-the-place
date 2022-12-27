@@ -1,5 +1,5 @@
 import React from 'react';
-import Slide from '../layout/Slide';
+import Slide from '../components/Mainpage/Slide';
 
 const DUMMY_Data = [
   { id: 1, title: '제목 1234', text: '내용 1234', img: 'url1' },
