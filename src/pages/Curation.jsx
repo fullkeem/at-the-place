@@ -5,7 +5,7 @@ const Curation = () => {
   return (
     <div className={classes.container}>
       <div className={classes.innerBox}>
-        <h1 className={classes.title}>내 취향의 카페 찾기</h1>
+        <h1>내 취향의 카페 찾기</h1>
       </div>
     </div>
   );
