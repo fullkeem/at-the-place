@@ -5,12 +5,10 @@ import Login from './pages/Login';
 import Mypage from './pages/Mypage';
 import Navigation from './layout/Navigation';
 
-
 const Router = () => {
   return (
     <>
       <BrowserRouter>
-
         <Navigation />
         <Routes>
           <Route path="/" element={<Mainpage />} />
