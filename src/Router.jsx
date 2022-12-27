@@ -4,6 +4,7 @@ import Mainpage from './pages/Mainpage';
 import Login from './pages/Login';
 import Mypage from './pages/Mypage';
 import Navigation from './layout/Navigation';
+import Curation from './pages/Curation';
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
           <Route path="/" element={<Mainpage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/mypage" element={<Mypage />} />
+          <Route path="/curation" element={<Curation />} />
         </Routes>
       </BrowserRouter>
     </>
