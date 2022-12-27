@@ -10,7 +10,7 @@ const DUMMY_Data = [
 function Mainpage() {
   const slideData = DUMMY_Data.map((data, i) => (
     <Slide
-      id={data.id}
+      key={data.id}
       title={data.title}
       text={data.text}
       img={data.img}
