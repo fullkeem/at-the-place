@@ -2,7 +2,12 @@ import React from 'react';
 import Slide from '../components/Mainpage/Slide';
 
 const DUMMY_Data = [
-  { id: 1, title: '제목 1234', text: '내용 1234', img: 'url1' },
+  {
+    id: 1,
+    title: '지금 잠이 오시나요 충만님?',
+    text: '저는 왜 잠이 오는거죠!',
+    img: 'url1',
+  },
   { id: 2, title: '제목 5678', text: '내용 5678', img: 'url2' },
   { id: 3, title: '제목 9012', text: '내용 9012', img: 'url3' },
 ];
