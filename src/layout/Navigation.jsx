@@ -4,7 +4,7 @@ import { FaBars, FaMapMarkedAlt } from 'react-icons/fa';
 import classes from './Navigation.module.scss';
 
 function Navigation() {
-  // const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
   const [height, setHeight] = useState(1);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ function Navigation() {
   }, []);
 
   const listenToScroll = () => {
-    // let heightToHideFrom = 100;
+    let heightToHideFrom = 10;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
     setHeight(winScroll);
@@ -21,18 +21,25 @@ function Navigation() {
     if (winScroll === 0) {
       setHeight(1);
     }
-    // if (winScroll > heightToHideFrom) {
-    //   isVisible && setIsVisible(false);
-    // } else {
-    //   setIsVisible(true);
-    // }
+    if (winScroll > heightToHideFrom) {
+      isVisible && setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
   };
 
-  console.log(height);
+  console.log(height, isVisible);
 
   return (
     <>
-      <div className={classes.logo_wrapper}>
+      <div
+        className={classes.nav_container}
+        style={
+          isVisible
+            ? { backgroundColor: 'black' }
+            : { backgroundColor: 'transparent' }
+        }
+      >
         <FaBars />
         <img style={{ opacity: 5 / height }} src="src/assets/logo.png" />
         <FaMapMarkedAlt />
