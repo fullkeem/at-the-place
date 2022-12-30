@@ -103,6 +103,7 @@ video {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: none;
+  font-family: 'NanumBarunGothic', sans-serif;
 }
 
 footer,
@@ -143,4 +144,8 @@ table {
 input {
   -webkit-appearance: none;
   border-radius: 0;
+}
+
+div {
+  white-space: pre-wrap;
 }

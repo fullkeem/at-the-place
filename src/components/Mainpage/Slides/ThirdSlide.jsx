@@ -5,11 +5,10 @@ const ThirdSlide = (props) => {
   return (
     <>
       <div className={classes.slide_wrapper}>
-        <img src="src/assets/office.png" />
+        <img src="src/assets/office.png" alt="office_img" />
         <section className={classes.description_section}>
           <p>{props.text}</p>
           <h1>{props.title}</h1>
-          {/* <button>구경하러 가기</button> */}
         </section>
       </div>
     </>

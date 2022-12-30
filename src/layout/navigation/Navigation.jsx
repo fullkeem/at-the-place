@@ -54,12 +54,13 @@ function Navigation() {
         ) : (
           <>
             <FaBars
+              alt="menu_bar"
               onClick={() => {
                 setShowMenu(true);
               }}
             />
-            <img style={{ opacity: 5 / height }} src="src/assets/logo.png" />
-            <FaMapMarkedAlt />
+            <img style={{ opacity: 1 / height }} src="src/assets/logo.png" />
+            <FaMapMarkedAlt alt="map_icon" />
           </>
         )}
       </nav>
