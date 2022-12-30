@@ -5,12 +5,15 @@ const ThirdSlide = (props) => {
   return (
     <>
       <div className={classes.slide_wrapper}>
-        <img src="src/assets/office.png" alt="office_img" />
+        <section className={classes.bg_image_section}>
+          <img src="src/assets/map.png" />
+        </section>
         <section className={classes.description_section}>
-          <p>{props.text}</p>
           <h1>{props.title}</h1>
+          <p>{props.text}</p>
         </section>
       </div>
+      <div className={classes.bottom_slide_wrapper}></div>
     </>
   );
 };

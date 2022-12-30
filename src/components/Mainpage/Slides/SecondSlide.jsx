@@ -9,10 +9,9 @@ const SecondSlide = (props) => {
           <p>{props.text}</p>
         </section>
         <section className={classes.image_section}>
-          <img src="/src/assets/office.png" />
+          <img src="/src/assets/office.png" alt="survey image here" />
         </section>
       </div>
-      <div className={classes.bottom_slide_wrapper}></div>
     </>
   );
 };
