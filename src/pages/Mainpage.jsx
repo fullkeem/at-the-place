@@ -1,5 +1,6 @@
 import React from 'react';
 import FirstSlide from '../components/Mainpage/Slides/FirstSlide';
+import FourthSlide from '../components/Mainpage/Slides/FourthSlide';
 import SecondSlide from '../components/Mainpage/Slides/SecondSlide';
 import ThirdSlide from '../components/Mainpage/Slides/ThirdSlide';
 
@@ -27,6 +28,7 @@ function Mainpage() {
       <FirstSlide title={data[0].title} text={data[0].text} />
       <SecondSlide title={data[1].title} text={data[1].text} />
       <ThirdSlide title={data[2].title} text={data[2].text} />
+      <FourthSlide title={data[2].title} text={data[2].text} />
     </>
   );
 }

@@ -13,7 +13,6 @@ const ThirdSlide = (props) => {
           <p>{props.text}</p>
         </section>
       </div>
-      <div className={classes.bottom_slide_wrapper}></div>
     </>
   );
 };
