@@ -23,7 +23,7 @@ const data = [
   {
     id: 3,
     title: '@thePlace',
-    text: '대표 장소 둘러보기',
+    text: '지금 바로 이곳에서 당신이 원하는 당신만의 공간 둘러보기',
   },
 ];
 

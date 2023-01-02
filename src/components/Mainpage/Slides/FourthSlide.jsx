@@ -1,4 +1,5 @@
 import React from 'react';
+import NavButton from '../../layout/Buttons/NavButton';
 import Slider from '../Slider/Slider';
 import classes from './FourthSlide.module.scss';
 
@@ -24,11 +25,14 @@ const FourthSlide = (props) => {
   return (
     <>
       <div className={classes.slide_wrapper}>
-        <h1>{props.title}</h1>
-        <p>{props.text}</p>
+        <section className={classes.description_section}>
+          <h1>{props.title}</h1>
+          <p>{props.text}</p>
+          <NavButton title={'바로가기'} />
+        </section>
         <Slider sliderImageUrl={sliderImageUrl} />
       </div>
-      <div className={classes.bottom_slide_wrapper}></div>
+      {/* <div className={classes.bottom_slide_wrapper}></div> */}
     </>
   );
 };

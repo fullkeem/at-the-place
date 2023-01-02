@@ -2,6 +2,7 @@
   margin-top: 5rem;
   width: 23rem;
   height: 6rem;
+  font-size: 6rem;
   font-weight: 550;
   background: none;
   font-size: 1.4rem;
@@ -18,12 +19,17 @@
 }
 
 .nav_button span:after {
-  content: '\00bb';
+  content: '☕';
   position: absolute;
   opacity: 0;
   top: 0;
   right: -2rem;
   transition: 0.5s;
+}
+
+.nav_button:hover {
+  background-color: rgb(25, 25, 25, 0.8);
+  border: none;
 }
 
 .nav_button:hover span {
