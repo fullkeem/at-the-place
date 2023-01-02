@@ -27,8 +27,6 @@
 *:before,
 *:after {
   box-sizing: border-box;
-  // background-color: rgb(6, 4, 6);
-  // color: rgb(236, 224, 206);
 }
 
 h1 {
@@ -103,6 +101,7 @@ video {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: none;
+  font-family: 'NanumBarunGothic', sans-serif;
 }
 
 footer,
@@ -143,4 +142,8 @@ table {
 input {
   -webkit-appearance: none;
   border-radius: 0;
+}
+
+div {
+  white-space: pre-wrap;
 }

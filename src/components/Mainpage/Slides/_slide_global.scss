@@ -1,0 +1,11 @@
+@mixin slide_h1 {
+  font-size: 4rem;
+  font-weight: 550;
+}
+
+@mixin slide_p {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 550;
+  line-height: 1.5;
+}

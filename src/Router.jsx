@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Mainpage from './pages/Mainpage';
 import Login from './pages/Login';
 import Mypage from './pages/Mypage';
-import Navigation from './layout/Navigation';
+import Navigation from './components/layout/Navigation/Navigation';
 import Curation from './pages/Curation';
 
 const Router = () => {
