@@ -4,11 +4,17 @@ import Login from './pages/Login';
 import Mypage from './pages/Mypage';
 import Navigation from './components/layout/Navigation/Navigation';
 import Curation from './pages/Curation';
+import Overlay from './components/layout/Overlay';
 
 const Router = () => {
+  let visible = true;
+  // if(props.visible === false){
+  //   let visible = false
+  // }
   return (
     <>
       <BrowserRouter>
+        {!visible ? <Overlay /> : ''}
         <Navigation />
         <Routes>
           <Route path="/" element={<Mainpage />} />
