@@ -9,7 +9,7 @@ function Navigation() {
   const [height, setHeight] = useState(1);
   const [showMenu, setShowMenu] = useState('');
 
-  const state = useContext(OverlayContext);
+  const overlayCtx = useContext(OverlayContext);
 
   useEffect(() => {
     window.addEventListener('scroll', listenToScroll);
@@ -32,24 +32,26 @@ function Navigation() {
     setShowMenu(true);
   };
 
+  console.log(overlayCtx.clicked);
+
   return (
     <>
-      {showMenu ? (
+      {overlayCtx.clicked ? (
         <>
-          <DetailedNavigation forwardData={forwardData} />
+          <DetailedNavigation />
         </>
       ) : (
         <nav className={classes.nav_container}>
           <div className={classes.default_nav_wrapper}>
-            <FaBars alt="menu_bar" onClick={clickHander} />
+            <FaBars
+              alt="menu_bar"
+              onClick={() => overlayCtx.navClickedHandler(true)}
+            />
             <img
               style={{ opacity: 1 / height }}
               src="src/assets/logo_transparent.png"
             />
-            <FaMapMarkedAlt
-              alt="map_icon"
-              onClick={() => state.setLanguage('pk')}
-            />
+            <FaMapMarkedAlt alt="map_icon" />
           </div>
         </nav>
       )}

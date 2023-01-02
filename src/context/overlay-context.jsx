@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 
 const OverlayContext = React.createContext({
-  language: 'en',
-  setLanguage: () => {},
+  clicked: false,
+  navClickedHandler: () => {},
 });
 
 export const OverlayContextProvider = (props) => {
-  const setLanguage = (language) => {
-    setState({ ...state, language: language });
+  const [clicked, setClick] = useState(false);
+
+  const navClickedHandler = (value) => {
+    setClick(value);
   };
 
-  const initState = {
-    language: 'en',
-    setLanguage: setLanguage,
+  const contextValue = {
+    clicked,
+    navClickedHandler,
   };
-
-  const [state, setState] = useState(initState);
-  console.log(state);
+  console.log(clicked);
   return (
-    <OverlayContext.Provider value={state}>
+    <OverlayContext.Provider value={contextValue}>
       {props.children}
     </OverlayContext.Provider>
   );

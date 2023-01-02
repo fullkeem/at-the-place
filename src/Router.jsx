@@ -5,16 +5,16 @@ import Mypage from './pages/Mypage';
 import Navigation from './components/layout/Navigation/Navigation';
 import Curation from './pages/Curation';
 import Overlay from './components/layout/Overlay';
+import { useContext } from 'react';
+import OverlayContext from './context/overlay-context';
 
 const Router = () => {
-  let visible = true;
-  // if(props.visible === false){
-  //   let visible = false
-  // }
+  const overlayCtx = useContext(OverlayContext);
+
   return (
     <>
       <BrowserRouter>
-        {!visible ? <Overlay /> : ''}
+        {overlayCtx.clicked ? <Overlay /> : ''}
         <Navigation />
         <Routes>
           <Route path="/" element={<Mainpage />} />
