@@ -1,3 +1,5 @@
+@import './slide_global';
+
 .slide_wrapper {
   display: flex;
   justify-content: flex-start;
@@ -10,25 +12,12 @@
   .caption_wrapper {
     position: absolute;
     text-align: center;
-    margin-top: 19rem;
+    margin-top: 13rem;
     h1 {
-      font-size: 4rem;
-      margin: 1.25rem;
+      @include slide_h1;
     }
     p {
-      margin-top: 2rem;
-      font-size: 1.8rem;
-      font-weight: 550;
-    }
-    button {
-      margin-top: 16rem;
-      width: 23rem;
-      height: 6rem;
-      font-weight: 600;
-      background: none;
-      font-size: 1.4rem;
-      color: rgb(196, 196, 196);
-      border: 1px solid rgb(196, 196, 196);
+      @include slide_p;
     }
   }
 }

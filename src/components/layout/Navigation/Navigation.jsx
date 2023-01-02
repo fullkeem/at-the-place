@@ -5,7 +5,6 @@ import DetailedNavigation from './DetailedNavigation';
 import classes from './Navigation.module.scss';
 
 function Navigation() {
-  const [isVisible, setIsVisible] = useState(true);
   const [height, setHeight] = useState(1);
   const [showMenu, setShowMenu] = useState('');
 
@@ -25,28 +24,19 @@ function Navigation() {
     if (winScroll === 0) {
       setHeight(1);
     }
-    if (winScroll > heightToHideFrom) {
-      isVisible && setIsVisible(false);
-    } else {
-      setIsVisible(true);
-    }
+    // if (winScroll > heightToHideFrom) {
+    //   isVisible && setIsVisible(false);
+    // } else {
+    //   setIsVisible(true);
+    // }
   };
   const forwardData = (forwardedData) => {
     setShowMenu(forwardedData);
   };
 
-  console.log(forwardedData);
-
   return (
     <>
-      <nav
-        className={classes.nav_container}
-        style={
-          isVisible
-            ? { backgroundColor: 'black' }
-            : { backgroundColor: 'transparent' }
-        }
-      >
+      <nav className={classes.nav_container}>
         {showMenu ? (
           <>
             <DetailedNavigation forwardData={forwardData} />
@@ -59,7 +49,10 @@ function Navigation() {
                 setShowMenu(true);
               }}
             />
-            <img style={{ opacity: 1 / height }} src="src/assets/logo.png" />
+            <img
+              style={{ opacity: 1 / height }}
+              src="src/assets/logo_transparent.png"
+            />
             <FaMapMarkedAlt alt="map_icon" />
           </>
         )}

@@ -1,4 +1,6 @@
-.slide_wrapper {
+@import './slide_global';
+
+.slide_wrapper2 {
   display: flex;
   align-items: center;
   width: 100%;
@@ -14,15 +16,12 @@
     height: 50%;
     margin-left: 5rem;
     h1 {
-      font-size: 4.5rem;
+      @include slide_h1;
       color: rgb(97, 69, 73);
     }
     p {
-      margin-top: 1.8rem;
-      margin-left: 1rem;
-      font-size: 1.5rem;
-      font-weight: 550;
-      line-height: 1.5;
+      margin-top: 1.5rem;
+      @include slide_p;
       color: rgb(197, 174, 154);
     }
   }

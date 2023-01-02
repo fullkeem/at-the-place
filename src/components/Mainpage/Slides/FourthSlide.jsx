@@ -2,7 +2,8 @@ import React from 'react';
 import Slider from '../Slider/Slider';
 import classes from './FourthSlide.module.scss';
 
-const FourthSlide = () => {
+const FourthSlide = (props) => {
+  console.log(props.title);
   const sliderImageUrl = [
     {
       url: 'https://images.unsplash.com/photo-1559305616-3f99cd43e353?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
@@ -23,6 +24,8 @@ const FourthSlide = () => {
   return (
     <>
       <div className={classes.slide_wrapper}>
+        <h1>{props.title}</h1>
+        <p>{props.text}</p>
         <Slider sliderImageUrl={sliderImageUrl} />
       </div>
       <div className={classes.bottom_slide_wrapper}></div>

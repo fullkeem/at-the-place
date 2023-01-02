@@ -4,7 +4,7 @@ import classes from './ThirdSlide.module.scss';
 const ThirdSlide = (props) => {
   return (
     <>
-      <div className={classes.slide_wrapper}>
+      <div className={classes.slide_wrapper2}>
         <section className={classes.bg_image_section}>
           <img src="src/assets/map.png" />
         </section>
