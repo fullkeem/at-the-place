@@ -1,0 +1,19 @@
+.nav_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 10rem;
+  position: fixed;
+  padding: 0rem 4rem;
+  background-color: none;
+
+  svg {
+    color: whitesmoke;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: 3rem;
+  }
+  img {
+    width: 14rem;
+  }
+}
