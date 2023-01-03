@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './CurationForm.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 const curationInfoData = [
   {
@@ -31,6 +32,8 @@ const curationInfoData = [
 const CurationForm = () => {
   const imgStyle = { width: '2rem', height: '2rem', marginBottom: '0.5rem' };
 
+  const navigate = useNavigate();
+
   return (
     <div className={classes.container}>
       <div className={classes.innerBox}>
@@ -55,7 +58,13 @@ const CurationForm = () => {
           />
         </div>
         <div className={classes.footer}>
-          <button type="button" className={classes.play}>
+          <button
+            type="button"
+            className={classes.play}
+            onClick={() => {
+              navigate('/curation/questions');
+            }}
+          >
             카페 찾기!
           </button>
         </div>
