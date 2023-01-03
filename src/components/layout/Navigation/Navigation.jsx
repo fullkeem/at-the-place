@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
-import { FaBars, FaMapMarkedAlt, FaArrowLeft } from 'react-icons/fa';
+import { useState, useEffect, useContext } from 'react';
+import { FaBars, FaMapMarkedAlt } from 'react-icons/fa';
+import OverlayContext from '../../../context/overlay-context';
 import DetailedNavigation from './DetailedNavigation';
 
 import classes from './Navigation.module.scss';
@@ -8,15 +9,13 @@ function Navigation() {
   const [height, setHeight] = useState(1);
   const [showMenu, setShowMenu] = useState('');
 
-  const [forwardedData] = useState('');
+  const overlayCtx = useContext(OverlayContext);
 
   useEffect(() => {
     window.addEventListener('scroll', listenToScroll);
-    // return () => window.removeEventListener('scroll', listenToScroll);
   }, []);
 
   const listenToScroll = () => {
-    let heightToHideFrom = 10;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
     setHeight(winScroll);
@@ -24,39 +23,38 @@ function Navigation() {
     if (winScroll === 0) {
       setHeight(1);
     }
-    // if (winScroll > heightToHideFrom) {
-    //   isVisible && setIsVisible(false);
-    // } else {
-    //   setIsVisible(true);
-    // }
   };
-  const forwardData = (forwardedData) => {
-    setShowMenu(forwardedData);
+  const forwardData = (isClicked) => {
+    setShowMenu(isClicked);
   };
+
+  const clickHander = () => {
+    setShowMenu(true);
+  };
+
+  console.log(overlayCtx.clicked);
 
   return (
     <>
-      <nav className={classes.nav_container}>
-        {showMenu ? (
-          <>
-            <DetailedNavigation forwardData={forwardData} />
-          </>
-        ) : (
-          <>
+      {overlayCtx.clicked ? (
+        <>
+          <DetailedNavigation />
+        </>
+      ) : (
+        <nav className={classes.nav_container}>
+          <div className={classes.default_nav_wrapper}>
             <FaBars
               alt="menu_bar"
-              onClick={() => {
-                setShowMenu(true);
-              }}
+              onClick={() => overlayCtx.navClickedHandler(true)}
             />
             <img
               style={{ opacity: 1 / height }}
               src="src/assets/logo_transparent.png"
             />
             <FaMapMarkedAlt alt="map_icon" />
-          </>
-        )}
-      </nav>
+          </div>
+        </nav>
+      )}
     </>
   );
 }

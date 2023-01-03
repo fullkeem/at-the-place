@@ -10,6 +10,7 @@
   color: rgb(196, 196, 196);
   background-color: none;
   .caption_wrapper {
+    z-index: 1;
     position: absolute;
     text-align: center;
     margin-top: 13rem;
@@ -23,7 +24,7 @@
 }
 video {
   object-fit: cover;
-  z-index: -10;
+  z-index: -3;
   position: fixed;
   top: 0;
   left: 0;
