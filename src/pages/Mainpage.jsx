@@ -1,5 +1,4 @@
 import React from 'react';
-import Overlay from '../components/layout/Overlay/Overlay';
 import FirstSlide from '../components/Mainpage/Slides/FirstSlide';
 import FourthSlide from '../components/Mainpage/Slides/FourthSlide';
 import SecondSlide from '../components/Mainpage/Slides/SecondSlide';

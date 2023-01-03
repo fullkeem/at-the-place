@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from './Input.module.scss';
 
-const Input = () => {
+const Input = (props) => {
   return (
-    <div className={classes.signup_inpu_wrappert}>
-      <input placeholder={'이메일 주소  ( 형식: hello@atThePlace.com )'} />
+    <div className={classes.signup_input_wrapperr}>
+      <input placeholder={props.placeholder} />
     </div>
   );
 };

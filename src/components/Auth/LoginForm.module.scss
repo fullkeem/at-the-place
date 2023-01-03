@@ -1,7 +1,39 @@
-.test {
+@import '../../index.scss';
+
+.login_container {
+  background-color: $col_dark_beige;
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .login_card_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: $col_brown;
+    margin-top: 8rem;
+    width: 50%;
+    height: 50%;
+    border-radius: 1rem;
+    .login_title_section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        font-size: 2rem;
+        color: $col_lt_beige;
+      }
+    }
+    .login_input_wrapper {
+      width: 75%;
+    }
+  }
+  button {
+    margin: 0;
+  }
 }
