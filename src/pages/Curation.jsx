@@ -1,5 +1,5 @@
 import React from 'react';
-import CurationForm from '../components/Auth/CurationPage/CurationForm';
+import CurationForm from '../components/CurationPage/CurationForm';
 
 const Curation = () => {
   return (
