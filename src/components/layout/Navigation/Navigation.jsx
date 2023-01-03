@@ -24,6 +24,12 @@ function Navigation() {
     }
   };
 
+  const clickHander = () => {
+    setShowMenu(true);
+  };
+
+  console.log(overlayCtx.clicked);
+
   return (
     <>
       {overlayCtx.clicked ? (
