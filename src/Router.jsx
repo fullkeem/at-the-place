@@ -4,7 +4,7 @@ import Login from './pages/Login';
 import Mypage from './pages/Mypage';
 import Navigation from './components/layout/Navigation/Navigation';
 import Curation from './pages/Curation';
-import Questions from './components/CurationPage/Questions';
+import EnterTheName from './components/CurationPage/EnterTheName';
 import Overlay from './components/layout/Overlay';
 import { useContext } from 'react';
 import OverlayContext from './context/overlay-context';
@@ -22,7 +22,7 @@ const Router = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/curation" element={<Curation />} />
-          <Route path="/curation/questions" element={<Questions />} />
+          <Route path="/curation/enterthename" element={<EnterTheName />} />
         </Routes>
       </BrowserRouter>
     </>

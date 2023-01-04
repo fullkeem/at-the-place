@@ -62,7 +62,7 @@ const CurationForm = () => {
             type="button"
             className={classes.play}
             onClick={() => {
-              navigate('/curation/questions');
+              navigate('/curation/enterthename');
             }}
           >
             카페 찾기!
