@@ -1,25 +1,28 @@
 @import '../../index.scss';
 
-.login_container {
-  background-color: $col_dark_beige;
+.signup_container {
   width: 100%;
   height: 100vh;
+  background-color: $col_brown;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .login_card_wrapper {
+  .signup_card_wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     padding: 2rem 0;
-    background-color: $col_brown;
+    background-color: $col_dark_beige;
     margin-top: 8rem;
     width: 50%;
-    height: 50%;
+    height: 70%;
     border-radius: 1rem;
-    .login_title_section {
+    .signup_input_wrapper {
+      width: 75%;
+    }
+    .signup_title_section {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -29,11 +32,5 @@
         color: $col_lt_beige;
       }
     }
-    .login_input_wrapper {
-      width: 75%;
-    }
-  }
-  button {
-    margin: 0;
   }
 }

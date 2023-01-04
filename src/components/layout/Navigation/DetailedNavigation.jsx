@@ -4,30 +4,28 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import OverlayContext from '../../../context/overlay-context';
 
-const DetailedNavigation = (props) => {
-  // const isClicked = false;
-
-  // const isClickeHandler = () => {
-  //   props.forwardData(isClicked);
-  // };
-
+const DetailedNavigation = () => {
   const overlayCtx = useContext(OverlayContext);
   console.log(overlayCtx.clicked);
 
   return (
     <>
       {overlayCtx.clicked && (
-        <div className={classes.detailed_nav_container}>
-          <FaArrowLeft onClick={() => overlayCtx.navClickedHandler(false)} />
+        <div
+          className={classes.detailed_nav_container}
+          onClick={() => overlayCtx.navClickedHandler(false)}
+        >
+          <FaArrowLeft />
           <li>
-            <Link to="/">회원가입</Link>
+            <Link to="/">메인페이지</Link>
           </li>
           <li>
-            <Link to="/">로그인</Link>
+            <Link to="/signup">회원가입</Link>
           </li>
           <li>
-            <Link to="/">둘러보기</Link>
+            <Link to="/login">로그인</Link>
           </li>
+
           <li>
             <Link to="/">문의하기</Link>
           </li>
