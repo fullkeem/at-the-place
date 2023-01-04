@@ -147,3 +147,13 @@ input {
 div {
   white-space: pre-wrap;
 }
+
+*:focus {
+  outline: none;
+}
+
+//Color Variable
+$col_beige: rgb(196, 196, 196);
+$col_brown: rgb(97, 69, 73);
+$col_dark_beige: rgb(197, 174, 154);
+$col_lt_beige: rgb(255, 255, 245);

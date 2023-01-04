@@ -7,7 +7,6 @@ import classes from './Navigation.module.scss';
 
 function Navigation() {
   const [height, setHeight] = useState(1);
-  const [showMenu, setShowMenu] = useState('');
 
   const overlayCtx = useContext(OverlayContext);
 
@@ -23,9 +22,6 @@ function Navigation() {
     if (winScroll === 0) {
       setHeight(1);
     }
-  };
-  const forwardData = (isClicked) => {
-    setShowMenu(isClicked);
   };
 
   const clickHander = () => {

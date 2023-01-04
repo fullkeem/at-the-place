@@ -6,8 +6,8 @@
   font-weight: 550;
   background: none;
   font-size: 1.4rem;
-  color: rgb(196, 196, 196);
-  border: 1px solid rgb(196, 196, 196);
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
   transition: all 0.5s;
   cursor: pointer;
 }
@@ -28,7 +28,7 @@
 }
 
 .nav_button:hover {
-  background-color: rgb(25, 25, 25, 0.8);
+  background-color: rgb(25, 25, 25);
   border: none;
 }
 
