@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './CurationForm.module.scss';
 import { useNavigate } from 'react-router-dom';
+import NavButton from '../layout/Buttons/NavButton';
 
 const curationInfoData = [
   {
@@ -42,7 +43,6 @@ const CurationForm = () => {
           {curationInfoData.map((data) => {
             return (
               <li key={data.id} className={classes.info}>
-                {console.log(data.class)}
                 <img alt={data.alt} src={data.img} style={imgStyle} />
                 <p>{data.firstP}</p>
                 <p>{data.secondP}</p>
@@ -54,19 +54,18 @@ const CurationForm = () => {
           <img
             alt="커피 마시면서 쉬는 사람들"
             className={classes.coffeeTime}
-            src="src/assets/coffee-shop.png"
+            src="src/assets/coffee-lover.png"
           />
         </div>
         <div className={classes.footer}>
-          <button
+          <NavButton
             type="button"
-            className={classes.play}
+            title={'카페 찾기!'}
+            className={`${classes.start}`}
             onClick={() => {
               navigate('/curation/enterthename');
             }}
-          >
-            카페 찾기!
-          </button>
+          />
         </div>
       </div>
     </div>
