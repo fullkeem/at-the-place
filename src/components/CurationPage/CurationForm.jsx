@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './CurationForm.module.scss';
 import { useNavigate } from 'react-router-dom';
+
+import EnterTheName from './EnterTheName';
 import NavButton from '../layout/Buttons/NavButton';
 
 const curationInfoData = [
@@ -35,6 +37,10 @@ const CurationForm = () => {
 
   const navigate = useNavigate();
 
+  const goToEnterName = () => {
+    navigate('/curation/enterthename');
+  };
+
   return (
     <div className={classes.container}>
       <div className={classes.innerBox}>
@@ -58,14 +64,16 @@ const CurationForm = () => {
           />
         </div>
         <div className={classes.footer}>
-          <NavButton
-            type="button"
-            title={'카페 찾기!'}
-            className={`${classes.start}`}
-            onClick={() => {
-              navigate('/curation/enterthename');
-            }}
-          />
+          {<EnterTheName /> && (
+            <NavButton
+              type="button"
+              title={'카페 찾기!'}
+              className={`${classes.start}`}
+              onClick={() => {
+                goToEnterName();
+              }}
+            />
+          )}
         </div>
       </div>
     </div>
