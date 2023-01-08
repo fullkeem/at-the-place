@@ -1,18 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import NavButton from '../layout/Buttons/NavButton';
 
 import classes from './EnterTheName.module.scss';
+import Questions from './Questions';
+import QuestionsList from './QuestionsList';
 
 const EnterTheName = () => {
   const [userName, setUserName] = useState('oo');
   const params = useParams();
-  const questionsId = params.questionsId;
+  let questionsId = params.questionsId;
 
   const navigate = useNavigate();
 
   const getUserName = (e) => {
     setUserName(e.target.value);
+  };
+
+  useEffect(() => {
+    questionsId = QuestionsList[0].id;
+  }, []);
+
+  const goToQuestion = () => {
+    navigate(`/curation/${questionsId}`);
   };
 
   return (
@@ -40,10 +50,7 @@ const EnterTheName = () => {
         />
       </div>
       <div className={classes.buttonBox}>
-        <NavButton
-          title={'start'}
-          onClick={() => navigate('/curation/enterthename/questions')}
-        />
+        <NavButton title={'start'} onClick={() => goToQuestion()} />
       </div>
     </div>
   );
