@@ -4,16 +4,17 @@ import NavButton from '../layout/Buttons/NavButton';
 import classes from './SignupForm.module.scss';
 
 const SingupForm = () => {
-  const [submitted, setSubmitted] = useState(false);
-
-  const [enteredEmail, setEnteredEmail] = useState();
-  const [enteredPwd, setEnteredPwd] = useState();
+  const [enteredEmail, setEnteredEmail] = useState('');
+  const [enteredPwd, setEnteredPwd] = useState('');
   const [enteredUsername, setEnteredUsername] = useState('');
 
-  const [emailIsValid, setEmailIsValid] = useState(false);
-  const [pwdIsValid, setPwdIsValid] = useState(false);
-  const [usernameIsValid, setUsernameIsValid] = useState(false);
-  const [samePwdIsValid, setSamePwdIsValid] = useState(false);
+  const [emailIsValid, setEmailIsValid] = useState('');
+  const [pwdIsValid, setPwdIsValid] = useState('');
+  const [usernameIsValid, setUsernameIsValid] = useState('');
+  const [samePwdIsValid, setSamePwdIsValid] = useState('');
+
+  const [submitted, setSubmitted] = useState(false);
+  const [formIsValid, setFormIsValid] = useState(false);
 
   const emailRef = useRef();
   const nameRef = useRef();
@@ -27,28 +28,22 @@ const SingupForm = () => {
     setEnteredPwd(e.target.value);
   };
   const usernameHandler = (e) => {
-    setUsernameIsValid(e.target.value);
+    setEnteredUsername(e.target.value);
   };
 
   const validationHandler = () => {
-    if (enteredEmail === undefined) {
-      setEmailIsValid(false);
-    } else {
+    if (enteredEmail !== undefined) {
       setEmailIsValid(enteredEmail.includes('@'));
     }
-    if (enteredPwd === undefined) {
-      setPwdIsValid(false);
-    } else {
-      setPwdIsValid(enteredPwd.trim().length > 5);
-    }
-    if (enteredUsername === undefined) {
+    if (enteredEmail.includes('@') === true) {
       setUsernameIsValid(enteredUsername.trim().length > 1);
     }
-    if (enteredPwd === samePwdRef.current.value) {
-      console.log(samePwdRef.current.value);
-      setSamePwdIsValid(true);
+    if (enteredUsername.trim().length > 1 === true) {
+      setPwdIsValid(enteredPwd.trim().length > 7);
     }
-
+    if (enteredPwd.trim().length > 7) {
+      setSamePwdIsValid(enteredPwd === samePwdRef.current.value);
+    }
     setSubmitted(true);
   };
 
@@ -57,6 +52,11 @@ const SingupForm = () => {
     const enteredEmail = emailRef.current.value;
     const enteredPwd = pwdRef.current.value;
     validationHandler();
+
+    if (emailIsValid && usernameIsValid && pwdIsValid && samePwdIsValid) {
+      setFormIsValid(true);
+    }
+
     fetch(
       'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD5MykwB0XPBgc1l7QgzZdz0CBouXSXUyM',
       {
@@ -73,7 +73,6 @@ const SingupForm = () => {
     ).catch((err) => {
       alert(err.message);
     });
-    console.log(samePwdIsValid, samePwdRef.current.value, enteredPwd);
   };
 
   const signupCondClass = `${classes.signup_input_field} ${
@@ -89,6 +88,8 @@ const SingupForm = () => {
       ? classes.signup_input_field_invalid
       : ''
   }`;
+
+  console.log(formIsValid);
 
   return (
     <div className={classes.signup_container}>
