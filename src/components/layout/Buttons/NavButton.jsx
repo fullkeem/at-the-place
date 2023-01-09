@@ -3,11 +3,11 @@ import classes from './NavButton.module.scss';
 
 const NavButton = (props) => {
   return (
-    <>
-      <button className={classes.nav_button}>
+    <div>
+      <button className={`${classes.nav_button}`} onClick={props.event}>
         <span>{props.title} </span>
       </button>
-    </>
+    </div>
   );
 };
 

@@ -16,7 +16,7 @@ export const OverlayContextProvider = (props) => {
     clicked,
     navClickedHandler,
   };
-  console.log(clicked);
+
   return (
     <OverlayContext.Provider value={contextValue}>
       {props.children}

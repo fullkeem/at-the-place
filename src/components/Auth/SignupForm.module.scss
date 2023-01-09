@@ -32,5 +32,36 @@
         color: $col_lt_beige;
       }
     }
+    .signup_input_field {
+      border-bottom: 1px solid $col_lt_beige;
+      width: 100%;
+      border: none;
+      background-color: transparent;
+      padding: 1rem 0.5rem;
+      margin-bottom: 0.5rem;
+      font-family: 'NanumBarunGothic', sans-serif;
+      font-size: 1rem;
+      color: $col_brown;
+      border-bottom: 1px solid $col_lt_beige;
+    }
+
+    .signup_input_field_invalid {
+      color: orangered;
+      border-bottom: 1px solid orangered;
+    }
+
+    ::placeholder {
+      color: $col_lt_beige;
+    }
+    input:focus {
+      border-bottom: 1px solid $col_brown;
+    }
+
+    input:focus::placeholder {
+      color: transparent;
+    }
+  }
+  .invalid_note {
+    color: orangered;
   }
 }

@@ -28,8 +28,6 @@ function Navigation() {
     setShowMenu(true);
   };
 
-  console.log(overlayCtx.clicked);
-
   return (
     <>
       {overlayCtx.clicked ? (
